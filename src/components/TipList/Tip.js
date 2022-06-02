@@ -1,37 +1,29 @@
-// Helpers
-import { Link } from 'react-router-dom';
-import { getTagIcon, formatDate } from '../../helpers';
+// Icons
+import { icons } from '../../theme/icons/tag';
 
-export const Tip = (props) => {
-    const {
-        title, created, author, preview, tag, id,
-    } = props;
-
-    const TagIcon = getTagIcon(tag.name);
-    const formattedDate = formatDate(created);
-
+export const Tip = () => {
     return (
         <article>
             <header>
-                <TagIcon /> <h1>{ title }</h1>
+                <icons.JavaScript /> <h1>Умей фильтровать лишнее</h1>
             </header>
             <main>
                 <time>
-                    <TagIcon />
+                    <icons.JavaScript />
                     <div>
                         <span>
-                            🚀 { formattedDate }
+                            🚀 27.03.2021, 18:38
                         </span>
                         <span>
-                            👨🏼‍🚀 Автор: { author }
+                            👨🏼‍🚀 Автор: Lectrum
                         </span>
                     </div>
                 </time>
-                <h2>{ title }</h2>
-                <p>{ preview }</p>
+                <h2>Умей фильтровать лишнее</h2>
+                <p>{ '[false, false, \'hello\', true, undefined].filter() — [\'hello\', true]' }</p>
             </main>
             <footer>
-                <Link to = { id }>📖&nbsp;Читать полностью &rarr;</Link>
+                <a href = '#'>📖&nbsp;Читать полностью &rarr;</a>
             </footer>
         </article>
     );

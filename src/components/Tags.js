@@ -1,39 +1,27 @@
-
-// Hooks
-import { Link } from 'react-router-dom';
-import {  useTags } from '../hooks';
-
 // Helpers
-import { getTagIcon, fetchify } from '../helpers';
+import { getTagIcon } from '../helpers';
 
-export const Tags = ({ tipViewMode }) => {
-    const {
-        data, isFetched, setSelectedTagId, selectedTagId,
-    } = useTags();
+// Mock
+import icons from '../mock-data/tags.json';
 
-    const tagsJSX = Array.isArray(data) && data.map(({ id, name }) => {
+export const Tags = () => {
+    const tagsJSX = icons.map(({ id, name }) => {
         const TagIcon = getTagIcon(name);
 
-        const handleClick = () => {
-            setSelectedTagId(id);
-        };
-
         return (
-            <Link key = { id } to = { '/topic-by-tag' }>
-                <span
-                    data-active = { selectedTagId === id || tipViewMode === 'all-topics' }
-                    className = 'tag'
-                    onClick = { handleClick }>
-                    <TagIcon />
-                    { name }
-                </span>
-            </Link>
+            <span
+                data-active = { true }
+                key = { id }
+                className = 'tag'>
+                <TagIcon />
+                { name }
+            </span>
         );
     });
 
     return (
         <div className = 'tags'>
-            { fetchify(isFetched, tagsJSX) }
+            { tagsJSX }
         </div>
     );
 };

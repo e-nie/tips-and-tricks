@@ -1,7 +1,7 @@
 // Components
 import { Tags } from './Tags';
 
-export const Hero = ({ tipViewMode }) => {
+export const Hero = () => {
     return (
         <section className = 'hero'>
             <div className = 'title'>
@@ -9,7 +9,7 @@ export const Hero = ({ tipViewMode }) => {
                 <h2>Все темы</h2>
             </div>
 
-            <Tags tipViewMode = { tipViewMode } />
+            <Tags />
         </section>
     );
 };
