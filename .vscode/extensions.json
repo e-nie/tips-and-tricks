@@ -32,6 +32,8 @@
          */
         "mgmcdermott.vscode-language-babel",
         "graphql.vscode-graphql",
+        "jpoissonnier.vscode-styled-components",
+        "coenraads.bracket-pair-colorizer-2",
         "christian-kohler.npm-intellisense",
         "christian-kohler.path-intellisense",
         "redhat.vscode-yaml",
