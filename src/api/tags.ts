@@ -3,7 +3,7 @@ import axios from 'axios';
 import waait from 'waait';
 import { ITagModel } from '../types/TagModel';
 
-const requestDelay = 1000;
+const requestDelay = 0;
 
 export const tagsApi = Object.freeze({
     async getTags(): Promise<ITagModel[]> {

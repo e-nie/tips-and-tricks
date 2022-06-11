@@ -6,7 +6,7 @@ import { ISignUp } from '../components/forms/SignUpForm/config';
 import { ISignUpWithToken } from '../types';
 import { ILoginFormShape } from '../components/forms/types';
 
-const requestDelay = 1000;
+const requestDelay = 0;
 
 export const authApi = Object.freeze({
     async signUp(user: ISignUp): Promise<ISignUpWithToken> {

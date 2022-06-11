@@ -3,7 +3,7 @@ import axios from 'axios';
 import waait from 'waait';
 import { IProfile } from '../types/ProfileModel';
 
-const requestDelay = 1000;
+const requestDelay = 0;
 
 export const profileApi = Object.freeze({
     async getProfile(token: string): Promise<IProfile> {

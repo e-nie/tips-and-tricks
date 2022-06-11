@@ -7,10 +7,11 @@ import { api } from '../api';
 
 export const useTips = () => {
     const query = useQuery<ITipModel[]>('tips', api.getTips);
-    const { data, isFetched } = query;
+    const { data, isFetched, isSuccess } = query;
 
     return {
         data: Array.isArray(data) ? data : [],
         isFetched,
+        isSuccess,
     };
 };
