@@ -5,7 +5,7 @@ import { IPublishFormShape } from '../components/forms/types';
 import { AuthHeader } from '../types/AuthHeader';
 import { ITipModel } from '../types/TipModel';
 
-const requestDelay = 1000;
+const requestDelay = 0;
 
 export const tipsApi = Object.freeze({
     async getTips(): Promise<ITipModel[]> {

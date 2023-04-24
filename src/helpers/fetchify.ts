@@ -4,11 +4,11 @@ import { ReactElement } from 'react';
 type ContentType = string | undefined | null | boolean | ReactElement[];
 
 export const fetchify = (isFetched: boolean, content: ContentType) => {
-    if (!isFetched) {
+    if (!isFetched && !content) {
         return 'Загрузка...';
     }
 
-    if (content) {
+    if (typeof content !== 'undefined') {
         return content;
     }
 

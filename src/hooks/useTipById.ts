@@ -3,7 +3,7 @@ import { ITipModel } from '../types/TipModel';
 import { api } from '../api';
 
 export const useTipById = (id: string) => {
-    const { data, isFetchedAfterMount } = useQuery<ITipModel>(
+    const { data, isFetchedAfterMount, isSuccess } = useQuery<ITipModel>(
         ['tips', id],
         () => api.getTipById(id),
     );
@@ -11,5 +11,6 @@ export const useTipById = (id: string) => {
     return {
         isFetchedAfterMount,
         data,
+        isSuccess,
     };
 };

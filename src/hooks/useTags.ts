@@ -12,7 +12,7 @@ export const useTags = () => {
     const selectedTagId = useSelector(getSelectedTagId);
     const dispatch = useDispatch();
     const query = useQuery('tags', api.getTags);
-    const { data, isFetched } = query;
+    const { data, isFetched, isSuccess } = query;
 
     const setSelectedTagId = (id: string) => {
         dispatch(tagActions.setSelectedTagId(id));
@@ -29,5 +29,6 @@ export const useTags = () => {
         isFetched,
         setSelectedTagId,
         selectedTagId,
+        isSuccess,
     };
 };
